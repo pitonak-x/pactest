@@ -34,6 +34,8 @@ spec:
       value: "{{ repo_url }}"
     - name: revision
       value: "{{ revision }}"
+    - name: myparam
+      value: "foo-{{ namespace }}-bar-{{ pipeline_run_name }}-baz"
   pipelineSpec:
     params:
       - name: repo_url
