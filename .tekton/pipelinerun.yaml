@@ -36,10 +36,14 @@ spec:
       value: "{{ revision }}"
     - name: myparam
       value: "foo-{{ target_namespace }}-bar-$(context.pipelineRun.name)-baz"
+    - name: myparam2
+      value: "{{ target_namespace }}"
   pipelineSpec:
     params:
       - name: repo_url
       - name: revision
+      - name: myparam
+      - name: myparam2
     workspaces:
       - name: source
     tasks:
